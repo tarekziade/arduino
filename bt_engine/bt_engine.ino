@@ -11,15 +11,17 @@ void setup() {
   mySerial.begin(9600); 
   motor.setSpeed(255);     
   motor2.setSpeed(255);   
+
 } 
 
 char value ;
 
-void loop() { 
-    
+void loop() {  
+   
+  
       // Run the seven demo routines 
       while (!mySerial.available()); 
- 
+
       value =  mySerial.read();
       Serial.print(value);
       
@@ -28,9 +30,9 @@ void loop() {
        motor.run(FORWARD);
        
       } 
+      
       if (value == 'B') {
       motor.run(BACKWARD);
-      
        
       } 
       
@@ -44,11 +46,11 @@ void loop() {
        motor2.run(FORWARD);
       
       } 
+      
       if (value == 'R') {
       motor2.run(BACKWARD);
       
       } 
- 
 
 } 
 
